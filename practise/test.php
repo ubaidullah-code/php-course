@@ -23,16 +23,50 @@
 echo "welcome to php course<br/>";
 echo "check with html tag";
 echo '<br>value a is '.$a.' and value b is '.$b.' value c is '.$c;
+            //Datatype
+            $a = "hello world"; // string
+            echo  "<br>"."$a <br>";
+            $b = 45; // number/interger
+            echo $b."<br>";
+            $c = 23.45; //float
+            echo $c."<br>";
+            $d = TRUE; // booleam
+            echo $d.'<br>';
+            $f = array("qadir", "abdullah", "tabish"); //array
+            print_r($f);
+            $g = null; //null
+            echo $g;
 
-            // data type in Php
-            /*string
-            integer
-            booleam
-            float
-            array
-            object
-            null
-            resoure
-            */
+            //if else
+            if($b > $c)
+                echo "<br>b is greater then c ";
+            else
+                echo "<br>c is greater then b";
+
+            //define constant
+
+            define('PI',3.14);
+            $b = 12.45;
+            $r = PI*$b**2;
+            echo "<br>".$r;
+            //operators
+            $a =50;
+            $ubaid = "ubaid ullah";
+            echo "<br> ".($a>=$ubaid)."<br>";
+            var_dump($ubaid);
+            //spaceship operator
+
+            $num1 = 30;
+            $num2 = 40;
+            echo "<br>".($num1 <=> $num2)."<br>";
+            $num3 = 2;
+            $num4 = $num3++ + ++$num3 + $num3++ ;
+            //2 + 4 + 4
+            echo "<br> num3: ".$num3;
+            echo "<br> num4: ".$num4;
+
+            
+          
+
             
 ?>
