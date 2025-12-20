@@ -65,7 +65,40 @@ echo '<br>value a is '.$a.' and value b is '.$b.' value c is '.$c;
             echo "<br> num3: ".$num3;
             echo "<br> num4: ".$num4;
 
-            
+            //logical operators
+            // && is same and
+            // || is same as or
+            // !
+
+            $oper1 = 10;
+            $oper2 = 20;
+            if($oper1 and $oper2) // same as if($oper1 && $oper2)
+                echo "<br>hello friend";
+            else
+                echo "<br>bye friend";
+            // or operator
+             $oper3 = 0;
+            $oper4 = 0;
+            if($oper3 or $oper4) // same as if($oper3 || $oper4)
+                echo "<br>hello friend with or operator";
+            else
+                echo "<br>bye friend with or operator";
+            // not operator
+            $oper5 = 10;
+            if(!$oper5)
+                echo "<br> hello friend with not operator";
+            else
+                echo "<br> bye friend with not operator";
+
+            // string ooperator
+
+            $str1 = 10;
+            $str2 = 100;
+            $str2.=$str1;
+            echo "<br>$str2";
+            //conditionaly operator same as ternary operator
+            $str=500? "true": "false";
+            echo "<br>$str";
           
 
             
