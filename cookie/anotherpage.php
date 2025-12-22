@@ -12,6 +12,9 @@
     $password = $_COOKIE["password"];
     echo "$user $password";
     ?>
+    <form action="page2.php" method="post">
+        <button type="submit" value="submit">Submit</button>
+    </form>
     
 </body>
 </html>

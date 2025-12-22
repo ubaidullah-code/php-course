@@ -6,8 +6,9 @@
 
         <h1>welcome to user</h1>
     <?php
-    $user = $_COOKIE["username"];
-    $password = $_COOKIE["password"];
+    $user = $_COOKIE["username"] ?? "guest<br>";
+    $password = $_COOKIE["password"] ?? "password not founded";
+     
     echo "$user $password"
     ?>
 

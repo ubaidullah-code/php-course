@@ -26,8 +26,8 @@
     $userName = $_POST["textusername"];
     $userPassword = $_POST["textpassword"];
     echo "$userName $userPassword";
-    setcookie("username", $userName,);
-    setcookie("password", $userPassword,);
+    setcookie("username", $userName, time()+3600 ,"/");
+    setcookie("password", $userPassword,time()+3600, "/");
     
     header("Location: anotherpage.php");
  
