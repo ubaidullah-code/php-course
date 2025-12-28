@@ -47,6 +47,7 @@ trait message1{
         use message1;
     }
     class welcome2{
+        // if you used same function name in both traits and if you run both function then used this method for teqal the situation
         use message1, message2{
             message1::msge insteadof message2;
             message2::msge as msge2;
