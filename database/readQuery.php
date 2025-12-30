@@ -4,21 +4,37 @@ include './config/databaseConnection.php';
 
 <?php 
 
-    $sqlQuery = 'SELECT * FROM users';
-    $result = $conn->query($sqlQuery);
+    // $sqlQuery = 'SELECT * FROM users ';
+    // // $sqlQuery = 'SELECT * FROM users WHERE user_id = 4';
+    // $result = $conn->query($sqlQuery);
 
-    if($result->num_rows > 0){
-        while ($user = $result->fetch_assoc()) {
-            echo "<pre>";
-            print_r($user['userName']);
-            // print_r($user);
-        }
-    }
+    // if($result->num_rows > 0){
+    //     while ($user = $result->fetch_assoc()) {
+    //         echo "<pre>";
+    //         // print_r($user['userName']);
+    //         print_r($user);
+    //     }
+    // }
   
 
 
     // echo "<pre>";
     // print_r($result);
     // exit;
+
+?>
+<!-- practise -->
+<?php  
+
+    $sqlQuery = "SELECT user_id , userName ,created_at FROM users";
+
+    $result =$conn->query($sqlQuery);
+    
+    if ($result->num_rows > 0) {
+        while ($res = $result->fetch_assoc()) {
+            echo "<pre>";
+            print_r($res);
+        }
+    }
 
 ?>
