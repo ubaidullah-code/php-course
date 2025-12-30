@@ -1,15 +1,7 @@
 <?php
-    $host = "localhost";
-    $username= "root";
-    $port= 3307;
-    $db_name= "learning_database";
-    $password= "";
 
-    $conn = mysqli_connect($host,$username,$password, $db_name, $port);
-    echo "database is connected";
- if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
+
+include "databaseConnection.php"
     ?>
 
 
@@ -22,15 +14,15 @@
 </head>
 <body>
 <?php
-    $employee_id = 23;
-    $employee_name = "ubaidullah";
-    $employee_salary = 50000;
-    $department = "IT";
-    $sqlQuery = "insert into employee values(?,?,?,?)";
-    $ps = $conn->prepare($sqlQuery);
-    $ps->bind_param('isis', $employee_id,$employee_name,$employee_salary,$department);
-    $ps->execute();
-    echo "Record inserted in the table";
+//     $employee_id = 23;
+//     $employee_name = "ubaidullah";
+//     $employee_salary = 50000;
+//     $department = "IT";
+//     $sqlQuery = "insert into employee values(?,?,?,?)";
+//     $ps = $conn->prepare($sqlQuery);
+//     $ps->bind_param('isis', $employee_id,$employee_name,$employee_salary,$department);
+//     $ps->execute();
+//     echo "Record inserted in the table";
     
 ?>
 </body>
