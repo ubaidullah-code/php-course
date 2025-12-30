@@ -26,11 +26,11 @@ include './config/databaseConnection.php';
 <!-- practise -->
 <?php  
 
-    $sqlQuery = "SELECT user_id , userName ,created_at FROM users";
+    $sqlQuery = "SELECT user_id , userName ,created_at FROM users WHERE user_id = 3";
 
     $result =$conn->query($sqlQuery);
     
-    if ($result->num_rows > 0) {
+    if ($result->num_rows) {
         while ($res = $result->fetch_assoc()) {
             echo "<pre>";
             print_r($res);
