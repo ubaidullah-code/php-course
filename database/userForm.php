@@ -27,21 +27,30 @@ include './config/databaseConnection.php';
 
 <html>
     <head>
-        <title>set data in sql with form</title>
+        <title>Login Form</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <form action="userForm.php" method="post">
-            <label>
-                userName:
-                <input type="text" name="username">
-            </label>
-            <label>
-                Password:
-                <input type="password" name="userpass" id="">
-            </label>
-            <p><?= $error ? $error : ($success ? $success : "")?> </p>
-            <button type="submit" name="handleSubmit">Submit</button>
-        </form>
-      
+       <div class="form-container">
+    <form action="userForm.php" method="post" class="auth-form">
+        <h2>Login</h2>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="userpass">Password</label>
+            <input type="password" name="userpass" id="userpass" placeholder="Enter password" required>
+        </div>
+
+        <p class="form-message">
+            <?= $error ? $error : ($success ? $success : "") ?>
+        </p>
+
+        <button type="submit" name="handleSubmit">Sign In</button>
+    </form>
+</div>  
     </body>
 </html>

@@ -14,7 +14,7 @@
          die("connection is failed: $conn->connect_error");
 
     }
-    echo "database is connected<br>";
+    // echo "database is connected<br>";
 ?>
 
 <?php 
