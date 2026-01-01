@@ -64,7 +64,7 @@ if (isset($_POST['handleSubmit'])) {
     </label>
     <p><?= $error['userpass'] ?? "" ?></p>
     <div>
-      <button class="innerButt" type="submit" name="handleSubmit">Sign up</button>
+      <button class="innerButt" type="submit" name="handleSubmit">Add User</button>
     </div>
   </form>
   <div>
