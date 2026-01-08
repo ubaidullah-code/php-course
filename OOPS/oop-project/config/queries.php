@@ -6,9 +6,9 @@ include_once "databaseConnection.php";
 class Queries extends database
 {
     // get query
-    public function get_data($tableName, $fields = "*")
+    public function get_data($tableName, $id = null , $fields = "*", $id_field = "user_id")
     {
-        $sql = "SELECT $fields FROM $tableName order by user_id desc ";
+        $sql =  $id? "SELECT $fields FROM $tableName WHERE $id_field = $id" : "SELECT $fields FROM $tableName";
         $result = $this->connect()->query($sql);
         return $result;
     }
@@ -23,9 +23,10 @@ class Queries extends database
          $sql = "INSERT INTO $tableName ($fields)  VALUES ($values)";
 
         $result = $this->connect()->prepare($sql);
-    //    
+         //checking datatype of values
         $strtype = "";
-        foreach ($data as  $value) {
+        foreach ($data as  $value)
+        {
           $strtype .= is_int($value)?"i": "s";
         }
        
@@ -34,32 +35,17 @@ class Queries extends database
         $result->bind_param($strtype,...array_values($data));
         $result->execute();
     }
-}
-// object creation
-$obj = new Queries();
 
-$data = array(
-    'userName'=> 'Amir khan',
-    'password'=> 'pass1234'
-);
-
-$obj->insert_data("users", $data);
-
-
-
-
-
-
-
-
-
-// calling get query 
-$res = $obj->get_data("users");
-if ($res->num_rows > 0) {
-    while ($user = $res->fetch_assoc()) {
-        echo "<pre>";
-        print_r($user);
+    // DELETE QUERY
+      public function delete_data($tableName, $id_field = "user_id", $id)
+    {
+        $sql = "DELETE FROM $tableName WHERE $id_field = ?";
+        $result = $this->connect()->prepare($sql);
+        $result->bind_param('i', $id);
+          $result->execute();
+        
     }
 }
+
 
 ?>
