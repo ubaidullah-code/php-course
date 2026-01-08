@@ -62,6 +62,7 @@ if(isset($_POST['handlEdit']))
       width: 100%;
       border-collapse: collapse;
       font-size: 18px;
+        margin-top: 20px;
     }
 
     table thead th {
@@ -185,7 +186,9 @@ if(isset($_POST['handlEdit']))
         while ($user = $result->fetch_assoc()) {
           echo '<tr>';
           echo  "<td>{$user['userName']}</td>";
-          echo "<td>{$user['created_at']}</td>";
+          ?>
+           <td><?php echo date('d-M-Y H-i-A', strtotime($user['created_at'])); ?></td>
+           <?php
           echo "<td>
           <div>
           

@@ -27,19 +27,19 @@
         }
    }
    //  object creation
-//    $obj = new Student();
+   $obj = new Student();
 
 //    // calling the static name variable/properties
-//    echo $obj->name."<br>";
+   echo $obj->name."<br>";
 
 //    // calling the function 
 //    echo $obj->create();
 
 //    // set the value using arguments in the properties/variable
-//     $obj->set_name("Qadir");
+    $obj->set_name("Qadir");
 
 //     // calling the properties to set in upper line
-//    echo '<br>'.$obj->username;
+   echo '<br>'.$obj->username;
 
 
 ?> -->

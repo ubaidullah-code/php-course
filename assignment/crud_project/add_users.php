@@ -23,7 +23,7 @@ if (isset($_POST['handleSubmit'])) {
     $result->bind_param('ss', $success['username'], $success['pass']);
     $result->execute();
     echo 'user Successfully added';
-    header("Location: add_users.php?success=1");
+    header("Location: users.php");
     exit;
   }
 }
