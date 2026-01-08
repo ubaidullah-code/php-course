@@ -24,10 +24,10 @@ $result =$result->fetch_assoc();
 echo "<pre>";
 
 
-//store user data in session
-// session_start();
-// $_SESSION['user']= $result;
-// print_r($_SESSION['user']);
+// store user data in session
+session_start();
+$_SESSION['user']= $result;
+print_r($_SESSION['user']);
 
 //cookie
 setcookie("users",json_encode($result));
