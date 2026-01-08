@@ -43,9 +43,6 @@ $data = array(
     'password'=> 'pass1234'
 );
 
-
-
-
 $obj->insert_data("users", $data);
 
 
